@@ -41,5 +41,10 @@ namespace PrelimWPF
         {
             MessageBox.Show("Hello World");
         }
+
+        private void Switch1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
