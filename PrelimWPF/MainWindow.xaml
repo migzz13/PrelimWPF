@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="8-Bit Binary Game" Height="566" Width="911" ResizeMode="CanMinimize">
+        Title="8-Bit Binary Game" Height="635" Width="987" ResizeMode="CanMinimize">
     <Grid Margin="0,0,0,-6">
         <Grid.Background>
-            <ImageBrush ImageSource="/46888871-624a3900-ce7f-11e8-808e-99fd90c8a3f4.png"/>
+            <ImageBrush ImageSource="/FlappyBird.png" Stretch="Fill"/>
         </Grid.Background>
-        <Label Content="LEADERBOARD" HorizontalAlignment="Left" Margin="-200,55,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="UltraBold" Foreground="White"/>
-        <Label Content="8-Bit Binary Game" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" FontSize="65" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
+        <Label Content="8-Bit Conversion Game" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" FontSize="65" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0.242"/>
@@ -19,24 +18,39 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="Timer" Content="Label" BorderThickness="4" HorizontalAlignment="Center" Margin="0,123,0,0" VerticalAlignment="Top" Background="#FF929292" FontFamily="Lucida Console" FontSize="30" BorderBrush="Black"/>
-        <Label x:Name="DecimalNum" Content="Label" BorderThickness="4" HorizontalAlignment="Center" Margin="0,224,0,0" VerticalAlignment="Top" Background="#FF929292" FontFamily="Lucida Console" FontSize="30" BorderBrush="Black"/>
-        <Button x:Name="StartBtn" Content="Start" BorderThickness="3" Margin="146,0,0,47" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="64" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="237"/>
-        <Button x:Name="RuleBtn" Content="How to play" BorderThickness="3" Margin="0,0,146,47" Background="#FFFF793B" BorderBrush="White" Foreground="White" FontSize="30" FontFamily="Lucida Console" Click="RuleBtn_Click" Height="64" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="237"/>
-        <TextBox x:Name="UserInput" BorderThickness="4" HorizontalAlignment="Center" Margin="0,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="270" Height="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FF929292"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="Black" TextChanged="UserInput_TextChanged"/>
-        <ListBox x:Name="leaderboard"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="-212,102,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="168" Height="170" VerticalAlignment="Top">
+        <Label x:Name="Timer" Content="Label" BorderThickness="3" HorizontalAlignment="Center" Margin="0,113,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="30" BorderBrush="#FF40392F"/>
+        <Button x:Name="StartBtn" Content="Start" BorderThickness="3" Margin="175,0,0,59" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="64" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="237" Click="StartBtn_Click" Focusable="False"/>
+        <Button x:Name="RuleBtn" Content="How to play" BorderThickness="3" Margin="0,0,163,59" Background="#FFFF793B" BorderBrush="White" Foreground="White" FontSize="30" FontFamily="Lucida Console" Click="RuleBtn_Click" Height="64" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="237" Focusable="False"/>
+        <TextBox x:Name="Bit1" BorderThickness="3" HorizontalAlignment="Left" Margin="82,265,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Width="64" Height="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" TextChanged="UserInput_TextChanged" AcceptsReturn="True" IsReadOnly="True" SelectionOpacity="-1" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Bit2" BorderThickness="3" HorizontalAlignment="Left" Margin="191,265,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Width="64" Height="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" TextChanged="UserInput_TextChanged" AcceptsReturn="True" IsReadOnly="True" SelectionOpacity="-1" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Bit3" BorderThickness="3" HorizontalAlignment="Left" Margin="300,265,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Width="64" Height="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" TextChanged="UserInput_TextChanged" AcceptsReturn="True" IsReadOnly="True" SelectionOpacity="-1" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Bit4" BorderThickness="3" HorizontalAlignment="Left" Margin="411,265,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Width="64" Height="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" TextChanged="UserInput_TextChanged" RenderTransformOrigin="0.369,0.526" AcceptsReturn="True" IsReadOnly="True" SelectionOpacity="-1" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Bit5" BorderThickness="3" HorizontalAlignment="Left" Margin="519,265,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Width="64" Height="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" TextChanged="UserInput_TextChanged" AcceptsReturn="True" IsReadOnly="True" SelectionOpacity="-1" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Bit6" BorderThickness="3" HorizontalAlignment="Left" Margin="627,265,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Width="64" Height="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" TextChanged="UserInput_TextChanged" AcceptsReturn="True" IsReadOnly="True" SelectionOpacity="-1" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Bit7" BorderThickness="3" HorizontalAlignment="Left" Margin="737,265,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Width="64" Height="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" TextChanged="UserInput_TextChanged" AcceptsReturn="True" IsReadOnly="True" SelectionOpacity="-1" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Bit8" BorderThickness="3" HorizontalAlignment="Left" Margin="843,265,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Width="64" Height="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" TextChanged="UserInput_TextChanged" RenderTransformOrigin="0.369,0.526" AcceptsReturn="True" IsReadOnly="True" SelectionOpacity="-1" Focusable="False" IsHitTestVisible="False"/>
+        <Button x:Name="Switch1" Content="Swap" BorderThickness="3" Margin="82,0,0,222" BorderBrush="Black" FontFamily="Lucida Console" FontSize="20" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White"/>
+        <Button x:Name="Switch2" Content="Swap" BorderThickness="3" Margin="191,0,0,222" BorderBrush="Black" FontFamily="Lucida Console" FontSize="20" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White"/>
+        <Button x:Name="Switch3" Content="Swap" BorderThickness="3" Margin="300,0,0,222" BorderBrush="Black" FontFamily="Lucida Console" FontSize="20" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White"/>
+        <Button x:Name="Switch4" Content="Swap" BorderThickness="3" Margin="411,0,0,222" BorderBrush="Black" FontFamily="Lucida Console" FontSize="20" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White"/>
+        <Button x:Name="Switch5" Content="Swap" BorderThickness="3" Margin="519,0,0,222" BorderBrush="Black" FontFamily="Lucida Console" FontSize="20" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White"/>
+        <Button x:Name="Switch6" Content="Swap" BorderThickness="3" Margin="627,0,0,222" BorderBrush="Black" FontFamily="Lucida Console" FontSize="20" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White"/>
+        <Button x:Name="Switch7" Content="Swap" BorderThickness="3" Margin="737,0,0,222" BorderBrush="Black" FontFamily="Lucida Console" FontSize="20" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White"/>
+        <Button x:Name="Switch8" Content="Swap" BorderThickness="3" Margin="843,0,0,222" BorderBrush="Black" FontFamily="Lucida Console" FontSize="20" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White"/>
+        <ListBox x:Name="LdrBrdBox"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="-392,169,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="360" Height="335" VerticalAlignment="Top" BorderThickness="3" FontSize="21">
+            <ListBox.OpacityMask>
+                <SolidColorBrush Color="#FFE1D897" Opacity="1"/>
+            </ListBox.OpacityMask>
             <ListBox.BorderBrush>
-                <SolidColorBrush Color="White" Opacity="0"/>
+                <SolidColorBrush Color="#FF40392F" Opacity="1"/>
             </ListBox.BorderBrush>
             <ListBox.Background>
-                <SolidColorBrush Color="Black" Opacity="0.25"/>
+                <SolidColorBrush Color="#FFE1D897" Opacity="1"/>
             </ListBox.Background>
-            <ListBox.OpacityMask>
-                <SolidColorBrush Color="White" Opacity="0.75"/>
-            </ListBox.OpacityMask>
             <ListBox.Foreground>
-                <SolidColorBrush Color="White" Opacity="1"/>
+                <SolidColorBrush Color="Black" Opacity="1"/>
             </ListBox.Foreground>
         </ListBox>
-       </Grid>
+        <Label x:Name="LdrBrdLabel" Content="LEADERBOARD" BorderThickness="3" HorizontalAlignment="Left" Margin="-320,113,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="30" BorderBrush="#FF40392F"/>
+    </Grid>
 </Window>

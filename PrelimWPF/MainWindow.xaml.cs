@@ -27,14 +27,19 @@ namespace PrelimWPF
 
         private void RuleBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Once the game starts, the program will generate a random 8-bit decimal number and start the 30-second timer." +
-                "Your goal is to convert the decimal number into it's binary form. The game will continue to generate new numbers for you " +
-                "to convert until the timer runs out.");
+            //MessageBox.Show("Once the game starts, the program will generate a random 8-bit decimal number and start the 30-second timer." +
+            //    "Your goal is to convert the decimal number into it's binary form. The game will continue to generate new numbers for you " +
+            //    "to convert until the timer runs out.");
         }
 
         private void UserInput_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void StartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello World");
         }
     }
 }
