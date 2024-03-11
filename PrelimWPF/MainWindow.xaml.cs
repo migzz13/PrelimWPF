@@ -31,7 +31,7 @@ namespace PrelimWPF
             InitializeComponent();
             _dt = new DispatcherTimer();
             _dt.Tick += _dt_Tick;
-            _dt.Interval = new TimeSpan(0, 0, 0, 0, 1000);
+            _dt.Interval = new TimeSpan(0, 0, 0, 1, 0);
         }
 
         private void _dt_Tick(object sender, EventArgs e)
