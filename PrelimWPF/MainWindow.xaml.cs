@@ -58,7 +58,10 @@ namespace PrelimWPF
         }
         private void RuleBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Once the game starts, the program will generate a random 8-bit decimal number and start the timer. Your goal is to convert the decimal number into it's binary form. The game will continue to generate new numbers for you to convert until the timer runs out.", "How To Play");
+            MessageBox.Show("Once the game starts, the program will generate a random 8-bit" +
+                " decimal number and start the timer. Your goal is to convert the decimal" +
+                " number into it's binary form. The game will continue to generate " +
+                "new numbers for you to convert until the timer runs out.", "How To Play");
         }
         private void Switch1_Click(object sender, RoutedEventArgs e)
         {
@@ -66,10 +69,14 @@ namespace PrelimWPF
             {
                 if (Bit1.Text == "0")
                 {
+                    Bird1.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
                     Bit1.Text = "1";
                 }
                 else
+                {
+                    Bird1.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
                     Bit1.Text = "0";
+                }
             }
         }
         private void Switch2_Click(object sender, RoutedEventArgs e)
@@ -78,85 +85,116 @@ namespace PrelimWPF
             {
                 if (Bit2.Text == "0")
                 {
+                    Bird2.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
                     Bit2.Text = "1";
                 }
                 else
-                    Bit2.Text = "0";
+                {
+					Bird2.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					Bit2.Text = "0";
+                }
             }
         }
         private void Switch3_Click(object sender, RoutedEventArgs e)
         {
-            if (_timerStatus)
-            {
-                if (Bit3.Text == "0")
-                {
-                    Bit3.Text = "1";
-                }
-                else
-                    Bit3.Text = "0";
-            }
-        }
+			if (_timerStatus)
+			{
+				if (Bit3.Text == "0")
+				{
+					Bird3.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					Bit3.Text = "1";
+				}
+				else
+				{
+					Bird3.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					Bit3.Text = "0";
+				}
+			}
+		}
 
         private void Switch4_Click(object sender, RoutedEventArgs e)
         {
-            if (_timerStatus)
-            {
-                if (Bit4.Text == "0")
-                {
-                    Bit4.Text = "1";
-                }
-                else
-                    Bit4.Text = "0";
-            }
-        }
+			if (_timerStatus)
+			{
+				if (Bit4.Text == "0")
+				{
+					Bird4.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					Bit4.Text = "1";
+				}
+				else
+				{
+					Bird4.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					Bit4.Text = "0";
+				}
+			}
+		}
 
         private void Switch5_Click(object sender, RoutedEventArgs e)
         {
-            if (_timerStatus)
-            {
-                if (Bit5.Text == "0")
-                {
-                    Bit5.Text = "1";
-                }
-                else
-                    Bit5.Text = "0";
-            }
-        }
+			if (_timerStatus)
+			{
+				if (Bit5.Text == "0")
+				{
+					Bird5.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					Bit5.Text = "1";
+				}
+				else
+				{
+					Bird5.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					Bit5.Text = "0";
+				}
+			}
+		}
 
         private void Switch6_Click(object sender, RoutedEventArgs e)
         {
-            if (_timerStatus)
-            {
-                if (Bit6.Text == "0")
-                {
-                    Bit6.Text = "1";
-                }
-                else
-                    Bit6.Text = "0";
-            }
-        }
+			if (_timerStatus)
+			{
+				if (Bit6.Text == "0")
+				{
+					Bird6.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					Bit6.Text = "1";
+				}
+				else
+				{
+					Bird6.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					Bit6.Text = "0";
+				}
+			}
+		}
 
         private void Switch7_Click(object sender, RoutedEventArgs e)
         {
-            if (_timerStatus)
-            {
-                if (Bit7.Text == "0")
-                {
-                    Bit7.Text = "1";
-                }
-                else
-                    Bit7.Text = "0";
-            }
-        }
+			if (_timerStatus)
+			{
+				if (Bit7.Text == "0")
+				{
+					Bird7.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					Bit7.Text = "1";
+				}
+				else
+				{
+					Bird7.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					Bit7.Text = "0";
+				}
+			}
+		}
 
         private void Switch8_Click(object sender, RoutedEventArgs e)
         {
-            if (Bit8.Text == "0")
-            {
-                Bit8.Text = "1";
-            }
-            else
-                Bit8.Text = "0";
-        }
-    }
+			if (_timerStatus)
+			{
+				if (Bit8.Text == "0")
+				{
+					Bird8.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					Bit8.Text = "1";
+				}
+				else
+				{
+					Bird8.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					Bit8.Text = "0";
+				}
+			}
+		}
+	}
 }

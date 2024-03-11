@@ -103,5 +103,11 @@
   <ItemGroup>
     <Resource Include="8bit Heli.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="deadbird.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bird.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
