@@ -23,9 +23,19 @@ namespace PrelimWPF
     {
         Random rnd = new Random();
 
+        int deci;
+        int score;
         bool _timerStatus = false;
         DispatcherTimer _dt = null;
 
+        int bit128;
+        int bit64;
+        int bit32;
+        int bit16;
+        int bit8;
+        int bit4;
+        int bit2;
+        int bit1;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,22 +48,45 @@ namespace PrelimWPF
         {
             int sec = int.Parse(Timer.Content.ToString());
             sec--;
-            if (sec < 0)
-            {
-                sec = 59;
-            }
             Timer.Content = sec.ToString();
+            if (sec == 0)
+            {
+                _dt.Stop();
+                StartBtn.Visibility = Visibility.Visible;
+                MessageBox.Show("Thank you for playing!");
+                Timer.Content = "";
+                decinum.Content = "";
+            }
         }
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
+            Bit1.Text = "0";
+            Bit2.Text = "0";
+            Bit3.Text = "0";
+            Bit4.Text = "0";
+            Bit5.Text = "0";
+            Bit6.Text = "0";
+            Bit7.Text = "0";
+            Bit8.Text = "0";
+
+            bit128 = 0;
+            bit64 = 0;
+            bit32 = 0;
+            bit16 = 0;
+            bit8 = 0;
+            bit4 = 0;
+            bit2 = 0;
+            bit1 = 0;
+
+            Timer.Content = "60";
             if (!_timerStatus)
             {
                 _dt.Start();
                 _timerStatus = true;
                 StartBtn.Visibility = Visibility.Hidden;
             }
-            int deci = rnd.Next(0, 256);
+            deci = rnd.Next(0, 256);
             decinum.Content = deci;
         }
         private void RuleBtn_Click(object sender, RoutedEventArgs e)
@@ -71,11 +104,13 @@ namespace PrelimWPF
                 {
                     Bird1.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
                     Bit1.Text = "1";
+                    bit128 = 128;
                 }
                 else
                 {
                     Bird1.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
                     Bit1.Text = "0";
+                    bit128 = 0;
                 }
             }
         }
@@ -87,11 +122,13 @@ namespace PrelimWPF
                 {
                     Bird2.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
                     Bit2.Text = "1";
+                    bit64 = 64;
                 }
                 else
                 {
 					Bird2.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
 					Bit2.Text = "0";
+                    bit64 = 0;
                 }
             }
         }
@@ -103,11 +140,13 @@ namespace PrelimWPF
 				{
 					Bird3.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
 					Bit3.Text = "1";
+                    bit32 = 32;
 				}
 				else
 				{
 					Bird3.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
 					Bit3.Text = "0";
+                    bit32 = 0;
 				}
 			}
 		}
@@ -120,11 +159,13 @@ namespace PrelimWPF
 				{
 					Bird4.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
 					Bit4.Text = "1";
+                    bit16 = 16;
 				}
 				else
 				{
 					Bird4.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
 					Bit4.Text = "0";
+                    bit16 = 0;
 				}
 			}
 		}
@@ -137,11 +178,13 @@ namespace PrelimWPF
 				{
 					Bird5.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
 					Bit5.Text = "1";
+                    bit8 = 8;
 				}
 				else
 				{
 					Bird5.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
 					Bit5.Text = "0";
+                    bit8 = 0;
 				}
 			}
 		}
@@ -154,11 +197,13 @@ namespace PrelimWPF
 				{
 					Bird6.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
 					Bit6.Text = "1";
+                    bit4 = 4;
 				}
 				else
 				{
 					Bird6.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
 					Bit6.Text = "0";
+                    bit4 = 0;
 				}
 			}
 		}
@@ -171,11 +216,13 @@ namespace PrelimWPF
 				{
 					Bird7.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
 					Bit7.Text = "1";
+                    bit2 = 2;
 				}
 				else
 				{
 					Bird7.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
 					Bit7.Text = "0";
+                    bit2 = 0;
 				}
 			}
 		}
@@ -188,13 +235,45 @@ namespace PrelimWPF
 				{
 					Bird8.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
 					Bit8.Text = "1";
+                    bit1 = 1;
 				}
 				else
 				{
 					Bird8.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
 					Bit8.Text = "0";
+                    bit1 = 0;
 				}
 			}
 		}
-	}
+
+        private void EnterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int UserAns = bit128 + bit64 + bit32 + bit16 + bit8 + bit4 + bit2 + bit1;
+            if (UserAns == deci)
+            {
+                deci = rnd.Next(0, 256);
+                decinum.Content = deci;
+                Bit1.Text = "0";
+                Bit2.Text = "0";
+                Bit3.Text = "0";
+                Bit4.Text = "0";
+                Bit5.Text = "0";
+                Bit6.Text = "0";
+                Bit7.Text = "0";
+                Bit8.Text = "0";
+
+                bit128 = 0;
+                bit64 = 0;
+                bit32 = 0;
+                bit16 = 0;
+                bit8 = 0;
+                bit4 = 0;
+                bit2 = 0;
+                bit1 = 0;
+
+                score++;
+                Score.Content = score;
+            }
+        }
+    }
 }
