@@ -52,33 +52,36 @@ namespace PrelimWPF
             if (sec == 0)
             {
                 _dt.Stop();
-                StartBtn.Visibility = Visibility.Visible;
+				_timerStatus = false;
+				StartBtn.Visibility = Visibility.Visible;
                 MessageBox.Show("Thank you for playing!");
                 Timer.Content = "";
                 decinum.Content = "";
-            }
-        }
+
+				Bit1.Text = "0";
+				Bit2.Text = "0";
+				Bit3.Text = "0";
+				Bit4.Text = "0";
+				Bit5.Text = "0";
+				Bit6.Text = "0";
+				Bit7.Text = "0";
+				Bit8.Text = "0";
+
+				bit128 = 0;
+				bit64 = 0;
+				bit32 = 0;
+				bit16 = 0;
+				bit8 = 0;
+				bit4 = 0;
+				bit2 = 0;
+				bit1 = 0;
+
+				Score.Content = "0";
+			}
+		}
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            Bit1.Text = "0";
-            Bit2.Text = "0";
-            Bit3.Text = "0";
-            Bit4.Text = "0";
-            Bit5.Text = "0";
-            Bit6.Text = "0";
-            Bit7.Text = "0";
-            Bit8.Text = "0";
-
-            bit128 = 0;
-            bit64 = 0;
-            bit32 = 0;
-            bit16 = 0;
-            bit8 = 0;
-            bit4 = 0;
-            bit2 = 0;
-            bit1 = 0;
-
             Timer.Content = "60";
             if (!_timerStatus)
             {
