@@ -105,13 +105,13 @@ namespace PrelimWPF
             {
                 if (Bit1.Text == "0")
                 {
-                    Bird1.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+                    RedBird1.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
                     Bit1.Text = "1";
                     bit128 = 128;
                 }
                 else
                 {
-                    Bird1.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+                    RedBird1.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
                     Bit1.Text = "0";
                     bit128 = 0;
                 }
@@ -123,13 +123,13 @@ namespace PrelimWPF
             {
                 if (Bit2.Text == "0")
                 {
-                    Bird2.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+                    RedBird2.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
                     Bit2.Text = "1";
                     bit64 = 64;
                 }
                 else
                 {
-					Bird2.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					RedBird2.Source = new BitmapImage(new Uri("Redbird.png", UriKind.RelativeOrAbsolute));
 					Bit2.Text = "0";
                     bit64 = 0;
                 }
@@ -141,13 +141,13 @@ namespace PrelimWPF
 			{
 				if (Bit3.Text == "0")
 				{
-					Bird3.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					RedBird3.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
 					Bit3.Text = "1";
                     bit32 = 32;
 				}
 				else
 				{
-					Bird3.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					RedBird3.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
 					Bit3.Text = "0";
                     bit32 = 0;
 				}
@@ -160,13 +160,13 @@ namespace PrelimWPF
 			{
 				if (Bit4.Text == "0")
 				{
-					Bird4.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					RedBird4.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
 					Bit4.Text = "1";
                     bit16 = 16;
 				}
 				else
 				{
-					Bird4.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					RedBird4.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
 					Bit4.Text = "0";
                     bit16 = 0;
 				}
@@ -179,13 +179,13 @@ namespace PrelimWPF
 			{
 				if (Bit5.Text == "0")
 				{
-					Bird5.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					RedBird5.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
 					Bit5.Text = "1";
                     bit8 = 8;
 				}
 				else
 				{
-					Bird5.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					RedBird5.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
 					Bit5.Text = "0";
                     bit8 = 0;
 				}
@@ -198,13 +198,13 @@ namespace PrelimWPF
 			{
 				if (Bit6.Text == "0")
 				{
-					Bird6.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					RedBird6.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
 					Bit6.Text = "1";
                     bit4 = 4;
 				}
 				else
 				{
-					Bird6.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					RedBird6.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
 					Bit6.Text = "0";
                     bit4 = 0;
 				}
@@ -217,13 +217,13 @@ namespace PrelimWPF
 			{
 				if (Bit7.Text == "0")
 				{
-					Bird7.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					RedBird7.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
 					Bit7.Text = "1";
                     bit2 = 2;
 				}
 				else
 				{
-					Bird7.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					RedBird7.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
 					Bit7.Text = "0";
                     bit2 = 0;
 				}
@@ -236,13 +236,13 @@ namespace PrelimWPF
 			{
 				if (Bit8.Text == "0")
 				{
-					Bird8.Source = new BitmapImage(new Uri("bird.png", UriKind.RelativeOrAbsolute));
+					RedBird8.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
 					Bit8.Text = "1";
                     bit1 = 1;
 				}
 				else
 				{
-					Bird8.Source = new BitmapImage(new Uri("deadbird.png", UriKind.RelativeOrAbsolute));
+					RedBird8.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
 					Bit8.Text = "0";
                     bit1 = 0;
 				}

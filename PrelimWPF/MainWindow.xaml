@@ -48,14 +48,6 @@
         <Label x:Name="Lbl4" Content="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Left" Margin="626,451,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="20" BorderBrush="White" Height="34" Width="64" Background="#FFFF793B" Foreground="White"/>
         <Label x:Name="Lbl2" Content="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Left" Margin="736,451,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="20" BorderBrush="White" Height="34" Width="64" Background="#FFFF793B" Foreground="White"/>
         <Label x:Name="Lbl1" Content="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Left" Margin="842,451,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="20" BorderBrush="White" Height="34" Width="64" Background="#FFFF793B" Foreground="White"/>
-        <Image x:Name="Bird1" Margin="61,375,799,247" Source="/deadbird.png" Stretch="Fill"/>
-        <Image x:Name="Bird2" Margin="171,375,689,247" Source="/deadbird.png" Stretch="Fill"/>
-        <Image x:Name="Bird3" Margin="281,375,579,247" Source="/deadbird.png" Stretch="Fill"/>
-        <Image x:Name="Bird4" Margin="391,375,469,247" Source="/deadbird.png" Stretch="Fill"/>
-        <Image x:Name="Bird5" Margin="499,375,361,247" Source="/deadbird.png" Stretch="Fill"/>
-        <Image x:Name="Bird6" Margin="604,375,256,247" Source="/deadbird.png" Stretch="Fill"/>
-        <Image x:Name="Bird7" Margin="715,375,145,247" Source="/deadbird.png" Stretch="Fill"/>
-        <Image x:Name="Bird8" Margin="824,375,36,247" Source="/deadbird.png" Stretch="Fill"/>
         <Label x:Name="ScoreLbl" Content="Score:"  HorizontalAlignment="Left" Margin="23,121,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -72,5 +64,13 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
+        <Image x:Name="RedBird1" Margin="44,372,789,255" Source="/RedBird.png" Stretch="Fill"/>
+        <Image x:Name="RedBird2" Margin="153,372,680,255" Source="/RedBird.png" Stretch="Fill"/>
+        <Image x:Name="RedBird3" Margin="262,372,571,255" Source="/RedBird.png" Stretch="Fill"/>
+        <Image x:Name="RedBird4" Margin="373,372,460,255" Source="/RedBird.png" Stretch="Fill"/>
+        <Image x:Name="RedBird5" Margin="481,372,352,255" Source="/RedBird.png" Stretch="Fill"/>
+        <Image x:Name="RedBird6" Margin="589,372,244,255" Source="/RedBird.png" Stretch="Fill"/>
+        <Image x:Name="RedBird7" Margin="699,372,134,255" Source="/RedBird.png" Stretch="Fill"/>
+        <Image x:Name="RedBird8" Margin="805,372,28,255" Source="/RedBird.png" Stretch="Fill"/>
     </Grid>
 </Window>

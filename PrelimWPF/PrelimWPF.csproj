@@ -104,10 +104,10 @@
     <Resource Include="8bit Heli.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="deadbird.png" />
+    <Resource Include="RedBird.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bird.png" />
+    <Resource Include="GreenBird.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
