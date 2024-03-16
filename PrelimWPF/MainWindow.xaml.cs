@@ -54,7 +54,7 @@ namespace PrelimWPF
                 _dt.Stop();
 				_timerStatus = false;
 				StartBtn.Visibility = Visibility.Visible;
-                MessageBox.Show("Thank you for playing!");
+                MessageBox.Show("Thank you for playing!\nFinal Score: " + Score.Content, "Game Over");
                 Timer.Content = "";
                 decinum.Content = "";
 
@@ -76,6 +76,15 @@ namespace PrelimWPF
 				bit2 = 0;
 				bit1 = 0;
 
+				RedBird1.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird2.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird3.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird4.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird5.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird6.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird7.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird8.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+
 				Score.Content = "0";
 			}
 		}
@@ -94,11 +103,13 @@ namespace PrelimWPF
         }
         private void RuleBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Once the game starts, the program will generate a random 8-bit" +
+			_dt.Stop();
+			MessageBox.Show("Once the game starts, the program will generate a random 8-bit" +
                 " decimal number and start the timer. Your goal is to convert the decimal" +
                 " number into it's binary form. The game will continue to generate " +
                 "new numbers for you to convert until the timer runs out.", "How To Play");
-        }
+			_dt.Start();
+		}
         private void Switch1_Click(object sender, RoutedEventArgs e)
         {
             if (_timerStatus)
@@ -274,7 +285,16 @@ namespace PrelimWPF
                 bit2 = 0;
                 bit1 = 0;
 
-                score++;
+				RedBird1.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird2.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird3.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird4.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird5.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird6.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird7.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+				RedBird8.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
+
+				score++;
                 Score.Content = score;
             }
         }

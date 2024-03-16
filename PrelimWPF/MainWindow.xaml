@@ -21,7 +21,7 @@
             </Label.Foreground>
         </Label>
         <Label x:Name="Timer" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Center" Margin="0,212,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="63" Width="114" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
-        <Label x:Name="decinum" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Center" Margin="0,291,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="63" Width="114"/>
+        <Label x:Name="decinum" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="64" Width="114"/>
         <Button x:Name="StartBtn" Content="Start" BorderThickness="3" Margin="174,0,0,31" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="237" Click="StartBtn_Click" Focusable="False"/>
         <Button x:Name="RuleBtn" Content="How to play" BorderThickness="3" Margin="0,0,164,31" Background="#FFFF793B" BorderBrush="White" Foreground="White" FontSize="30" FontFamily="Lucida Console" Click="RuleBtn_Click" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="237" Focusable="False"/>
         <Button x:Name="Switch1" Content="Switch" BorderThickness="3" Margin="81,0,0,126" BorderBrush="Black" FontFamily="Lucida Console" FontSize="14" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White" Click="Switch1_Click"/>
@@ -72,5 +72,13 @@
         <Image x:Name="RedBird6" Margin="589,372,244,255" Source="/RedBird.png" Stretch="Fill"/>
         <Image x:Name="RedBird7" Margin="699,372,134,255" Source="/RedBird.png" Stretch="Fill"/>
         <Image x:Name="RedBird8" Margin="805,372,28,255" Source="/RedBird.png" Stretch="Fill"/>
+        <Label x:Name="ConvertLbl" Content="Convert:"  HorizontalAlignment="Left" Margin="272,315,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.242"/>
+                    <GradientStop Color="#FF58DC61" Offset="0.434"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
     </Grid>
 </Window>
