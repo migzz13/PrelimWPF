@@ -372,8 +372,8 @@ namespace PrelimWPF
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
             int UserAns = bit128 + bit64 + bit32 + bit16 + bit8 + bit4 + bit2 + bit1;
-            if (UserAns == deci)
-            {
+			if (UserAns == deci)
+			{
 				RoundCount++;
 				double reduction = RoundCount * 0.066;
 
@@ -390,23 +390,23 @@ namespace PrelimWPF
 				deci = rnd.Next(0, 256);
 				decinum.Content = deci;
 
-                Bit1.Text = "0";
-                Bit2.Text = "0";
-                Bit3.Text = "0";
-                Bit4.Text = "0";
-                Bit5.Text = "0";
-                Bit6.Text = "0";
-                Bit7.Text = "0";
-                Bit8.Text = "0";
+				Bit1.Text = "0";
+				Bit2.Text = "0";
+				Bit3.Text = "0";
+				Bit4.Text = "0";
+				Bit5.Text = "0";
+				Bit6.Text = "0";
+				Bit7.Text = "0";
+				Bit8.Text = "0";
 
-                bit128 = 0;
-                bit64 = 0;
-                bit32 = 0;
-                bit16 = 0;
-                bit8 = 0;
-                bit4 = 0;
-                bit2 = 0;
-                bit1 = 0;
+				bit128 = 0;
+				bit64 = 0;
+				bit32 = 0;
+				bit16 = 0;
+				bit8 = 0;
+				bit4 = 0;
+				bit2 = 0;
+				bit1 = 0;
 
 				RedBird1.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
 				RedBird2.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
@@ -418,8 +418,14 @@ namespace PrelimWPF
 				RedBird8.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
 
 				score++;
-                Score.Content = score;
-            }
-        }
-    }
+				Score.Content = score;
+			}
+			else
+			{
+				_GameTimer.Stop();
+				MessageBox.Show("Please try again" , "Incorrect");
+				_GameTimer.Start();
+			}
+		}
+	}
 }
