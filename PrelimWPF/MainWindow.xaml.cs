@@ -202,12 +202,22 @@ namespace PrelimWPF
 		}
         private void RuleBtn_Click(object sender, RoutedEventArgs e)
         {
-			_GameTimer.Stop();
-			MessageBox.Show("Once the game starts, the program will generate a random 8-bit" +
-                " decimal number and start the timer. Your goal is to convert the decimal" +
-                " number into it's binary form. The game will continue to generate " +
-                "new numbers for you to convert until the timer runs out.", "How To Play");
-			_GameTimer.Start();
+			if (_GameTimerStatus)
+			{
+				_GameTimer.Stop();
+				MessageBox.Show("Once the game starts, the program will generate a random 8-bit" +
+					" decimal number and start the timer. Your goal is to convert the decimal" +
+					" number into it's binary form. The game will continue to generate " +
+					"new numbers for you to convert until the timer runs out.", "How To Play");
+				_GameTimer.Start();
+			}
+			else
+			{
+				MessageBox.Show("Once the game starts, the program will generate a random 8-bit" +
+					" decimal number and start the timer. Your goal is to convert the decimal" +
+					" number into it's binary form. The game will continue to generate " +
+					"new numbers for you to convert until the timer runs out.", "How To Play");
+			}
 		}
         private void Switch1_Click(object sender, RoutedEventArgs e)
         {
