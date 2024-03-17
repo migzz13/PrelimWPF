@@ -1,0 +1,25 @@
+﻿<Window x:Class="PrelimWPF.InputName"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrelimWPF"
+        mc:Ignorable="d"
+        Title="InputName" Height="413" Width="402">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/FlappyBird.png"/>
+        </Grid.Background>
+        <TextBox x:Name="UserName" BorderThickness="3" Margin="110,144,110,186" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" AcceptsReturn="True" SelectionOpacity="-1"/>
+        <Button x:Name="SubmitBtn" IsEnabled="True" Content="Submit" BorderThickness="3" Margin="0,266,0,70" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" HorizontalAlignment="Center" Width="236" Focusable="False" Click="SubmitBtn_Click"/>
+        <Label Content="Enter Name&#xD;&#xA;" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top" FontSize="44" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console" Height="54">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.242"/>
+                    <GradientStop Color="#FF58DC61" Offset="0.434"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+
+    </Grid>
+</Window>

@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/FlappyBird.png" Stretch="Fill"/>
         </Grid.Background>
-        <Button x:Name="EnterBtn" Content="Enter" BorderThickness="3" Margin="174,0,0,31" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="237" Focusable="False" Click="EnterBtn_Click" />
+        <Button x:Name="EnterBtn" Content="Enter" BorderThickness="3" Margin="0,650,0,0" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Top" HorizontalAlignment="Center" Width="236" Focusable="False" Click="EnterBtn_Click" />
         <Image Margin="389,-4,352,411" Source="/8bit Heli.png" Stretch="Fill"/>
         <Label Content="8-Bit Conversion Game" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" FontSize="65" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
             <Label.Foreground>
@@ -22,8 +22,8 @@
         </Label>
         <Label x:Name="Timer" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Center" Margin="0,212,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="63" Width="114" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
         <Label x:Name="decinum" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="64" Width="114"/>
-        <Button x:Name="StartBtn" Content="Start" BorderThickness="3" Margin="174,0,0,31" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="237" Click="StartBtn_Click" Focusable="False"/>
-        <Button x:Name="RuleBtn" Content="How to play" BorderThickness="3" Margin="0,0,164,31" Background="#FFFF793B" BorderBrush="White" Foreground="White" FontSize="30" FontFamily="Lucida Console" Click="RuleBtn_Click" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="237" Focusable="False"/>
+        <Button x:Name="StartBtn" Content="Start" BorderThickness="3" Margin="0,650,0,0" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Top" HorizontalAlignment="Center" Width="236" Click="StartBtn_Click" Focusable="False"/>
+        <Button x:Name="RuleBtn" Content="How to play" BorderThickness="3" Margin="669,650,0,0" Background="#FFFF793B" BorderBrush="White" Foreground="White" FontSize="30" FontFamily="Lucida Console" Click="RuleBtn_Click" Height="51" VerticalAlignment="Top" HorizontalAlignment="Left" Width="237" Focusable="False"/>
         <Button x:Name="Switch1" Content="Switch" BorderThickness="3" Margin="81,0,0,126" BorderBrush="Black" FontFamily="Lucida Console" FontSize="14" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White" Click="Switch1_Click"/>
         <Button x:Name="Switch2" Content="Switch" BorderThickness="3" Margin="190,0,0,126" BorderBrush="Black" FontFamily="Lucida Console" FontSize="14" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White" Click="Switch2_Click"/>
         <Button x:Name="Switch3" Content="Switch" BorderThickness="3" Margin="299,0,0,126" BorderBrush="Black" FontFamily="Lucida Console" FontSize="14" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="64" Foreground="Black" Background="White" Click="Switch3_Click"/>
@@ -82,5 +82,6 @@
         </Label>
         <Label x:Name="TimePlayedSecs" Content="00" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Left" Margin="-172,199,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="63" Width="114" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
         <Label x:Name="TimePlayedMin" Content="00" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Left" Margin="-172,117,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="62" Width="114" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
+        <Button x:Name="OpenLBBtn" Content="Leaderboard" BorderThickness="3" Margin="81,650,0,0" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236" Focusable="False" Click="OpenLBBtn_Click"/>
     </Grid>
 </Window>

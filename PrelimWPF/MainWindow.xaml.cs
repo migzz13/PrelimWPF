@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,39 +17,39 @@ using System.Windows.Threading;
 
 namespace PrelimWPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        Random rnd = new Random();
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : Window
+	{
+		Random rnd = new Random();
 
 		private DispatcherTimer DifficultModeTimer;
 
 		int deci;
-        int score;
-        int RoundCount;
+		int score;
+		int RoundCount;
 		public int MaxTime = 60;
 
-        bool _GameTimerStatus = false;
+		bool _GameTimerStatus = false;
 		bool _TimePlayedStatus = false;
-        DispatcherTimer _GameTimer = null;
+		DispatcherTimer _GameTimer = null;
 		DispatcherTimer _TimePlayed = null;
 
 		int bit128;
-        int bit64;
-        int bit32;
-        int bit16;
-        int bit8;
-        int bit4;
-        int bit2;
-        int bit1;
-        public MainWindow()
-        {
-            InitializeComponent();
-            _GameTimer = new DispatcherTimer();
-            _GameTimer.Tick += _GameTimer_Tick;
-            _GameTimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
+		int bit64;
+		int bit32;
+		int bit16;
+		int bit8;
+		int bit4;
+		int bit2;
+		int bit1;
+		public MainWindow()
+		{
+			InitializeComponent();
+			_GameTimer = new DispatcherTimer();
+			_GameTimer.Tick += _GameTimer_Tick;
+			_GameTimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
 
 			_TimePlayed = new DispatcherTimer();
 			_TimePlayed.Tick += _TimePlayed_Tick;
@@ -70,21 +71,25 @@ namespace PrelimWPF
 			TimePlayedMin.Content = min.ToString("00");
 		}
 		private void _GameTimer_Tick(object sender, EventArgs e)
-        {
-            int sec = int.Parse(Timer.Content.ToString());
-            sec--;
-            Timer.Content = sec.ToString();
-            if (sec == 0)
-            {
+		{
+			int sec = int.Parse(Timer.Content.ToString());
+			sec--;
+			Timer.Content = sec.ToString();
+			if (sec == 0)
+			{
 				string totaltimeplayed = TimePlayedMin.Content.ToString() + ":" + TimePlayedSecs.Content.ToString();
-                _GameTimer.Stop();
+				_GameTimer.Stop();
 				_GameTimerStatus = false;
 				_TimePlayed.Stop();
 				_TimePlayedStatus = false;
 				StartBtn.Visibility = Visibility.Visible;
-                MessageBox.Show("Thank you for playing!\nFinal Score: " + Score.Content + "\nTotal Time Played: " + totaltimeplayed , "Game Over");
-                Timer.Content = "";
-                decinum.Content = "";
+
+				string PlayerName = EnterUserName();
+				SavePlayerScore(PlayerName, score, $"{TimePlayedMin.Content}:{TimePlayedSecs.Content}");
+				ShowLeaderboard();
+				
+				Timer.Content = "";
+				decinum.Content = "";
 
 				Bit1.Text = "0";
 				Bit2.Text = "0";
@@ -117,7 +122,33 @@ namespace PrelimWPF
 			}
 		}
 
-        private void StartBtn_Click(object sender, RoutedEventArgs e)
+		private string EnterUserName()
+		{
+			string playerName = "";
+			InputName inputname = new InputName();
+			if (inputname.ShowDialog() == true)
+			{
+				playerName = inputname.PlayerName;
+			}
+			return playerName;
+		}
+
+		private void SavePlayerScore(string playerName, int playerScore, string playTime)
+		{
+			string filePath = "leaderboard.csv";
+			using (StreamWriter writer = new StreamWriter(filePath, true))
+			{
+				writer.WriteLine($"{playerName},{playerScore},{playTime}");
+			}
+		}
+
+		private void ShowLeaderboard()
+		{
+			Leaderboards leaderboards = new Leaderboards();
+			leaderboards.Show();
+		}
+
+		private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
 			Difficulty difficultywindow = new Difficulty();
 			if (difficultywindow.ShowDialog() == true)
@@ -370,17 +401,18 @@ namespace PrelimWPF
 			if (UserAns == deci)
 			{
 				RoundCount++;
-				double reduction = RoundCount * 0.066;
+				double reductionpercent = RoundCount * 0.066;
 
-				int roundTime = MaxTime - (int)(MaxTime * reduction);
+				int reduction = (int)(MaxTime * reductionpercent);
 
-				Timer.Content = roundTime.ToString();
-
-				if (RoundCount >= 11)
+				
+				if (reductionpercent > 0.66)
 				{
-					RoundCount = 0;
-					MaxTime -= 20;
+					reduction = (int)(MaxTime * 0.66);
 				}
+
+				int roundtime = MaxTime - reduction;
+				Timer.Content = roundtime.ToString();
 
 				deci = rnd.Next(0, 256);
 				decinum.Content = deci;
@@ -417,10 +449,13 @@ namespace PrelimWPF
 			}
 			else
 			{
-				_GameTimer.Stop();
 				MessageBox.Show("Please try again" , "Incorrect");
-				_GameTimer.Start();
 			}
+		}
+
+		private void OpenLBBtn_Click(object sender, RoutedEventArgs e)
+		{
+			ShowLeaderboard();
 		}
 	}
 }
