@@ -23,12 +23,17 @@ namespace PrelimWPF
     {
         Random rnd = new Random();
 
-        int deci;
+		private DispatcherTimer DifficultModeTimer;
+
+		int deci;
         int score;
+        int RoundCount;
+		public int MaxTime = 60;
+
         bool _timerStatus = false;
         DispatcherTimer _dt = null;
 
-        int bit128;
+		int bit128;
         int bit64;
         int bit32;
         int bit16;
@@ -91,16 +96,81 @@ namespace PrelimWPF
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            Timer.Content = "60";
-            if (!_timerStatus)
+			Difficulty difficultywindow = new Difficulty();
+			if (difficultywindow.ShowDialog() == true)
+			{
+				string selectedDifficulty = difficultywindow.SelectedDifficulty;
+
+				switch (selectedDifficulty)
+				{
+					case "Easy":
+						MaxTime = 60;
+						Lbl128.Visibility = Visibility.Visible;
+						Lbl64.Visibility = Visibility.Visible;
+						Lbl32.Visibility = Visibility.Visible;
+						Lbl16.Visibility = Visibility.Visible;
+						Lbl8.Visibility = Visibility.Visible;
+						Lbl4.Visibility = Visibility.Visible;
+						Lbl2.Visibility = Visibility.Visible;
+						Lbl1.Visibility = Visibility.Visible;
+						break;
+					case "Medium":
+						MaxTime = 45;
+						Lbl128.Visibility = Visibility.Hidden;
+						Lbl64.Visibility = Visibility.Hidden;
+						Lbl32.Visibility = Visibility.Hidden;
+						Lbl16.Visibility = Visibility.Hidden;
+						Lbl8.Visibility = Visibility.Hidden;
+						Lbl4.Visibility = Visibility.Hidden;
+						Lbl2.Visibility = Visibility.Hidden;
+						Lbl1.Visibility = Visibility.Hidden;
+						break;
+					case "Difficult":
+						MaxTime = 30;
+						Lbl128.Visibility = Visibility.Hidden;
+						Lbl64.Visibility = Visibility.Hidden;
+						Lbl32.Visibility = Visibility.Hidden;
+						Lbl16.Visibility = Visibility.Hidden;
+						Lbl8.Visibility = Visibility.Hidden;
+						Lbl4.Visibility = Visibility.Hidden;
+						Lbl2.Visibility = Visibility.Hidden;
+						Lbl1.Visibility = Visibility.Hidden;
+						StartDifficultTimer();
+						break;
+					default:
+						MaxTime = 60;
+						break;
+				}
+			}
+			Timer.Content = MaxTime.ToString();
+			if (!_timerStatus)
             {
                 _dt.Start();
                 _timerStatus = true;
                 StartBtn.Visibility = Visibility.Hidden;
             }
-            deci = rnd.Next(0, 256);
-            decinum.Content = deci;
-        }
+			NumberGenerator();
+		}
+		private void StartDifficultTimer()
+		{
+			DifficultModeTimer = new DispatcherTimer();
+			DifficultModeTimer.Tick += DifficultModeTimer_Tick;
+			DifficultModeTimer.Interval = TimeSpan.FromSeconds(rnd.Next(5, 19));
+			DifficultModeTimer.Start();
+		}
+		private void DifficultModeTimer_Tick(object sender, EventArgs e)
+		{
+			if (MaxTime == 30)
+			{
+				NumberGenerator();
+				DifficultModeTimer.Interval = TimeSpan.FromSeconds(rnd.Next(5, 10));
+			}
+		}
+		private void NumberGenerator()
+		{
+			deci = rnd.Next(0, 256);
+			decinum.Content = deci;
+		}
         private void RuleBtn_Click(object sender, RoutedEventArgs e)
         {
 			_dt.Stop();
@@ -265,8 +335,22 @@ namespace PrelimWPF
             int UserAns = bit128 + bit64 + bit32 + bit16 + bit8 + bit4 + bit2 + bit1;
             if (UserAns == deci)
             {
-                deci = rnd.Next(0, 256);
-                decinum.Content = deci;
+				RoundCount++;
+				double reduction = RoundCount * 0.066;
+
+				int roundTime = MaxTime - (int)(MaxTime * reduction);
+
+				Timer.Content = roundTime.ToString();
+
+				if (RoundCount >= 11)
+				{
+					RoundCount = 0;
+					MaxTime -= 20;
+				}
+
+				deci = rnd.Next(0, 256);
+				decinum.Content = deci;
+
                 Bit1.Text = "0";
                 Bit2.Text = "0";
                 Bit3.Text = "0";
