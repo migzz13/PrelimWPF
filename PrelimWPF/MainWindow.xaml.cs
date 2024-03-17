@@ -184,7 +184,7 @@ namespace PrelimWPF
 		{
 			DifficultModeTimer = new DispatcherTimer();
 			DifficultModeTimer.Tick += DifficultModeTimer_Tick;
-			DifficultModeTimer.Interval = TimeSpan.FromSeconds(rnd.Next(5, 19));
+			DifficultModeTimer.Interval = TimeSpan.FromSeconds(rnd.Next(5, 10));
 			DifficultModeTimer.Start();
 		}
 		private void DifficultModeTimer_Tick(object sender, EventArgs e)
