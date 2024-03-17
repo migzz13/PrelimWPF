@@ -40,16 +40,19 @@ namespace PrelimWPF
 		private void EasyDiff_Checked(object sender, RoutedEventArgs e)
 		{
 			MessageBox.Show("\n60 seconds for the starting timer." , "Easy Mode");
+			SelectBtn.IsEnabled = true;
 		}
 
 		private void MediumDiff_Checked(object sender, RoutedEventArgs e)
 		{
 			MessageBox.Show("\n45 second starting timer and bit labels are hidden.", "Medium Mode");
+			SelectBtn.IsEnabled = true;
 		}
 
 		private void DifficultDiff_Checked(object sender, RoutedEventArgs e)
 		{
 			MessageBox.Show("\n30 second starting timer, bit labels are hidden, and the decimal number changes within 5-10 seconds with bit values not resetting to 0." , "Difficult Mode");
+			SelectBtn.IsEnabled = true;
 		}
 	}
 }
