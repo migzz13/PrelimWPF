@@ -102,9 +102,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="46888871-624a3900-ce7f-11e8-808e-99fd90c8a3f4.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="FlappyBird.png" />
   </ItemGroup>
   <ItemGroup>
