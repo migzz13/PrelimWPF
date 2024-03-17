@@ -148,7 +148,7 @@ namespace PrelimWPF
 						Lbl2.Visibility = Visibility.Hidden;
 						Lbl1.Visibility = Visibility.Hidden;
 						break;
-					case "Difficult":
+					case "Hard":
 						MaxTime = 30;
 						Lbl128.Visibility = Visibility.Hidden;
 						Lbl64.Visibility = Visibility.Hidden;
@@ -158,7 +158,7 @@ namespace PrelimWPF
 						Lbl4.Visibility = Visibility.Hidden;
 						Lbl2.Visibility = Visibility.Hidden;
 						Lbl1.Visibility = Visibility.Hidden;
-						StartDifficultTimer();
+						StartHardModeTimer();
 						break;
 					default:
 						MaxTime = 60;
@@ -180,14 +180,14 @@ namespace PrelimWPF
 			}
 			NumberGenerator();
 		}
-		private void StartDifficultTimer()
+		private void StartHardModeTimer()
 		{
 			DifficultModeTimer = new DispatcherTimer();
-			DifficultModeTimer.Tick += DifficultModeTimer_Tick;
+			DifficultModeTimer.Tick += HardModeTimer_Tick;
 			DifficultModeTimer.Interval = TimeSpan.FromSeconds(rnd.Next(5, 10));
 			DifficultModeTimer.Start();
 		}
-		private void DifficultModeTimer_Tick(object sender, EventArgs e)
+		private void HardModeTimer_Tick(object sender, EventArgs e)
 		{
 			if (MaxTime == 30)
 			{

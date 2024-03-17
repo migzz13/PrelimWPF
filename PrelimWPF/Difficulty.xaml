@@ -38,7 +38,7 @@
                 </LinearGradientBrush>
             </RadioButton.Foreground>
         </RadioButton>
-        <RadioButton x:Name="DifficultDiff" Content="Difficult" VerticalContentAlignment="Center" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,195,0,0" FontFamily="Lucida Console" Checked="DifficultDiff_Checked">
+        <RadioButton x:Name="HardDiff" Content="Hard" VerticalContentAlignment="Center" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,195,0,0" FontFamily="Lucida Console" Checked="HardDiff_Checked">
             <RadioButton.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0.242"/>
