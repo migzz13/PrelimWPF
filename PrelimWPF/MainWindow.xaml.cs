@@ -30,8 +30,10 @@ namespace PrelimWPF
         int RoundCount;
 		public int MaxTime = 60;
 
-        bool _timerStatus = false;
-        DispatcherTimer _dt = null;
+        bool _GameTimerStatus = false;
+		bool _TimePlayedStatus = false;
+        DispatcherTimer _GameTimer = null;
+		DispatcherTimer _TimePlayed = null;
 
 		int bit128;
         int bit64;
@@ -44,22 +46,43 @@ namespace PrelimWPF
         public MainWindow()
         {
             InitializeComponent();
-            _dt = new DispatcherTimer();
-            _dt.Tick += _dt_Tick;
-            _dt.Interval = new TimeSpan(0, 0, 0, 1, 0);
-        }
+            _GameTimer = new DispatcherTimer();
+            _GameTimer.Tick += _GameTimer_Tick;
+            _GameTimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
 
-        private void _dt_Tick(object sender, EventArgs e)
+			_TimePlayed = new DispatcherTimer();
+			_TimePlayed.Tick += _TimePlayed_Tick;
+			_TimePlayed.Interval = new TimeSpan(0, 0, 0, 1, 0);
+		}
+
+		private void _TimePlayed_Tick(object sender, EventArgs e)
+		{
+			int sec = int.Parse(TimePlayedSecs.Content.ToString());
+			int min = int.Parse(TimePlayedMin.Content.ToString());
+			sec++;
+
+			if (sec >= 60)
+			{
+				sec = 0;
+				min++;
+			}
+			TimePlayedSecs.Content = sec.ToString("00");
+			TimePlayedMin.Content = min.ToString("00");
+		}
+		private void _GameTimer_Tick(object sender, EventArgs e)
         {
             int sec = int.Parse(Timer.Content.ToString());
             sec--;
             Timer.Content = sec.ToString();
             if (sec == 0)
             {
-                _dt.Stop();
-				_timerStatus = false;
+				string totaltimeplayed = TimePlayedMin.Content.ToString() + ":" + TimePlayedSecs.Content.ToString();
+                _GameTimer.Stop();
+				_GameTimerStatus = false;
+				_TimePlayed.Stop();
+				_TimePlayedStatus = false;
 				StartBtn.Visibility = Visibility.Visible;
-                MessageBox.Show("Thank you for playing!\nFinal Score: " + Score.Content, "Game Over");
+                MessageBox.Show("Thank you for playing!\nFinal Score: " + Score.Content + "\nTotal Time Played: " + totaltimeplayed , "Game Over");
                 Timer.Content = "";
                 decinum.Content = "";
 
@@ -143,12 +166,18 @@ namespace PrelimWPF
 				}
 			}
 			Timer.Content = MaxTime.ToString();
-			if (!_timerStatus)
+			if (!_GameTimerStatus)
             {
-                _dt.Start();
-                _timerStatus = true;
+                _GameTimer.Start();
+                _GameTimerStatus = true;
                 StartBtn.Visibility = Visibility.Hidden;
             }
+
+			if (!_TimePlayedStatus)
+			{
+				_TimePlayed.Start();
+				_TimePlayedStatus = true;
+			}
 			NumberGenerator();
 		}
 		private void StartDifficultTimer()
@@ -173,16 +202,16 @@ namespace PrelimWPF
 		}
         private void RuleBtn_Click(object sender, RoutedEventArgs e)
         {
-			_dt.Stop();
+			_GameTimer.Stop();
 			MessageBox.Show("Once the game starts, the program will generate a random 8-bit" +
                 " decimal number and start the timer. Your goal is to convert the decimal" +
                 " number into it's binary form. The game will continue to generate " +
                 "new numbers for you to convert until the timer runs out.", "How To Play");
-			_dt.Start();
+			_GameTimer.Start();
 		}
         private void Switch1_Click(object sender, RoutedEventArgs e)
         {
-            if (_timerStatus)
+            if (_GameTimerStatus)
             {
                 if (Bit1.Text == "0")
                 {
@@ -200,7 +229,7 @@ namespace PrelimWPF
         }
         private void Switch2_Click(object sender, RoutedEventArgs e)
         {
-            if (_timerStatus)
+            if (_GameTimerStatus)
             {
                 if (Bit2.Text == "0")
                 {
@@ -218,7 +247,7 @@ namespace PrelimWPF
         }
         private void Switch3_Click(object sender, RoutedEventArgs e)
         {
-			if (_timerStatus)
+			if (_GameTimerStatus)
 			{
 				if (Bit3.Text == "0")
 				{
@@ -237,7 +266,7 @@ namespace PrelimWPF
 
         private void Switch4_Click(object sender, RoutedEventArgs e)
         {
-			if (_timerStatus)
+			if (_GameTimerStatus)
 			{
 				if (Bit4.Text == "0")
 				{
@@ -256,7 +285,7 @@ namespace PrelimWPF
 
         private void Switch5_Click(object sender, RoutedEventArgs e)
         {
-			if (_timerStatus)
+			if (_GameTimerStatus)
 			{
 				if (Bit5.Text == "0")
 				{
@@ -275,7 +304,7 @@ namespace PrelimWPF
 
         private void Switch6_Click(object sender, RoutedEventArgs e)
         {
-			if (_timerStatus)
+			if (_GameTimerStatus)
 			{
 				if (Bit6.Text == "0")
 				{
@@ -294,7 +323,7 @@ namespace PrelimWPF
 
         private void Switch7_Click(object sender, RoutedEventArgs e)
         {
-			if (_timerStatus)
+			if (_GameTimerStatus)
 			{
 				if (Bit7.Text == "0")
 				{
@@ -313,7 +342,7 @@ namespace PrelimWPF
 
         private void Switch8_Click(object sender, RoutedEventArgs e)
         {
-			if (_timerStatus)
+			if (_GameTimerStatus)
 			{
 				if (Bit8.Text == "0")
 				{

@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="Difficulty" Height="448" Width="376" ResizeMode="NoResize">
+        Title="Difficulty" Height="470" Width="376" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush Stretch="UniformToFill"/>
     </Window.Background>
     <Grid Margin="0,0,0,-6">
         <Grid.Background>
-            <ImageBrush ImageSource="/46888871-624a3900-ce7f-11e8-808e-99fd90c8a3f4.png" Stretch="None"/>
+            <ImageBrush ImageSource="/FlappyBird.png" Stretch="None"/>
         </Grid.Background>
         <Label Content="Select" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,14,0,0" VerticalAlignment="Top" FontSize="44" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
             <Label.Foreground>
