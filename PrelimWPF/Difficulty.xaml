@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="Difficulty" Height="470" Width="376" ResizeMode="NoResize">
+        Title="Difficulty" Height="482" Width="376" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush Stretch="UniformToFill"/>
     </Window.Background>
@@ -13,6 +13,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/FlappyBird.png" Stretch="None"/>
         </Grid.Background>
+        <Label x:Name="Background" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" Margin="103,133,97,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="159" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
         <Label Content="Select" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,14,0,0" VerticalAlignment="Top" FontSize="44" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -21,31 +22,10 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button x:Name="SelectBtn" IsEnabled="False" Content="Select" BorderThickness="3" Margin="0,294,0,0" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Top" HorizontalAlignment="Center" Width="236" Click="SelectBtn_Click" Focusable="False"/>
-        <RadioButton x:Name="EasyDiff" Content="Easy" VerticalContentAlignment="Center" FontSize="25" HorizontalAlignment="Left" Margin="114,125,0,0" VerticalAlignment="Top" BorderThickness="2,1,1,1" FontFamily="Lucida Console" Checked="EasyDiff_Checked">
-            <RadioButton.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0.242"/>
-                    <GradientStop Color="#FF58DC61" Offset="0.434"/>
-                </LinearGradientBrush>
-            </RadioButton.Foreground>
-        </RadioButton>
-        <RadioButton x:Name="MediumDiff" Content="Medium" VerticalContentAlignment="Center" FontSize="25" HorizontalAlignment="Left" Margin="114,160,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" Checked="MediumDiff_Checked">
-            <RadioButton.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0.242"/>
-                    <GradientStop Color="#FF58DC61" Offset="0.434"/>
-                </LinearGradientBrush>
-            </RadioButton.Foreground>
-        </RadioButton>
-        <RadioButton x:Name="HardDiff" Content="Hard" VerticalContentAlignment="Center" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,195,0,0" FontFamily="Lucida Console" Checked="HardDiff_Checked">
-            <RadioButton.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0.242"/>
-                    <GradientStop Color="#FF58DC61" Offset="0.434"/>
-                </LinearGradientBrush>
-            </RadioButton.Foreground>
-        </RadioButton>
+        <Button x:Name="SelectBtn" IsEnabled="False" Content="Select" BorderThickness="3" Margin="0,337,0,0" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Top" HorizontalAlignment="Center" Width="236" Click="SelectBtn_Click" Focusable="False"/>
+        <RadioButton x:Name="EasyDiff" Content="Easy" VerticalContentAlignment="Center" FontSize="25" HorizontalAlignment="Left" Margin="125,156,0,0" VerticalAlignment="Top" BorderThickness="2,1,1,1" FontFamily="Lucida Console" Checked="EasyDiff_Checked" Foreground="#FF020202"/>
+        <RadioButton x:Name="MediumDiff" Content="Medium" VerticalContentAlignment="Center" FontSize="25" HorizontalAlignment="Center" Margin="0,198,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" Checked="MediumDiff_Checked" Foreground="#FF020202"/>
+        <RadioButton x:Name="HardDiff" Content="Hard" VerticalContentAlignment="Center" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,242,0,0" FontFamily="Lucida Console" Checked="HardDiff_Checked" Foreground="#FF020202"/>
         <Label Content="Difficulty" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" FontSize="44" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
