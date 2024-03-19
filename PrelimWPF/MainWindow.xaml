@@ -83,5 +83,21 @@
         <Label x:Name="TimePlayedSecs" Content="00" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Left" Margin="-172,199,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="63" Width="114" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
         <Label x:Name="TimePlayedMin" Content="00" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" HorizontalAlignment="Left" Margin="-172,117,0,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="62" Width="114" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
         <Button x:Name="OpenLBBtn" Content="Leaderboard" BorderThickness="3" Margin="81,650,0,0" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236" Focusable="False" Click="OpenLBBtn_Click"/>
+        <Label x:Name="RoundLbl" Content="Round:"  HorizontalAlignment="Left" Margin="780,108,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.242"/>
+                    <GradientStop Color="#FF58DC61" Offset="0.434"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="rounds" Content="1"  HorizontalAlignment="Left" Margin="920,108,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console" RenderTransformOrigin="1.914,0.581">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.242"/>
+                    <GradientStop Color="#FF58DC61" Offset="0.434"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
     </Grid>
 </Window>

@@ -28,7 +28,7 @@ namespace PrelimWPF
 
 		int deci;
 		int score;
-		int RoundCount;
+		int RoundCount = 1;
 		public int MaxTime = 60;
 
 		bool _GameTimerStatus = false;
@@ -401,6 +401,7 @@ namespace PrelimWPF
 			if (UserAns == deci)
 			{
 				RoundCount++;
+				rounds.Content = RoundCount;
 				double reductionpercent = RoundCount * 0.066;
 
 				int reduction = (int)(MaxTime * reductionpercent);
