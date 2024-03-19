@@ -209,6 +209,7 @@ namespace PrelimWPF
 				_TimePlayed.Start();
 				_TimePlayedStatus = true;
 			}
+			rounds.Content = RoundCount;
 			NumberGenerator();
 		}
 		private void StartHardModeTimer()
