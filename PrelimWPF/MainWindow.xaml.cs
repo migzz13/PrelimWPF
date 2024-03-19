@@ -85,7 +85,7 @@ namespace PrelimWPF
 				StartBtn.Visibility = Visibility.Visible;
 
 				string PlayerName = EnterUserName();
-				SavePlayerScore(PlayerName, score, $"{TimePlayedMin.Content}:{TimePlayedSecs.Content}");
+				SavePlayerScore(PlayerName, score, totaltimeplayed);
 				ShowLeaderboard();
 				
 				Timer.Content = "";
