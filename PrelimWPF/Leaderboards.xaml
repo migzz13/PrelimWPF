@@ -10,8 +10,8 @@
         <Grid.Background>
             <ImageBrush ImageSource="/FlappyBird.png"/>
         </Grid.Background>
-        <ListBox x:Name="LeaderboardBox" d:ItemsSource="{d:SampleData ItemCount=5}" BorderThickness="3" Margin="36,84,37,115" Background="#FFE1D897" BorderBrush="Black" FontFamily="Lucida Console" FontSize="14"/>
-        <Label Content="Leaderboard" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" FontSize="44" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console" Height="54">
+        <ListBox x:Name="LeaderboardBox" d:ItemsSource="{d:SampleData ItemCount=5}" BorderThickness="3" Margin="36,84,37,115" Background="#FFE1D897" BorderBrush="Black" FontFamily="Lucida Console" FontSize="14" IsHitTestVisible="False" SelectionChanged="LeaderboardBox_SelectionChanged"/>
+        <Label Content="Leaderboard" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" FontSize="44" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console" Height="54">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0.242"/>
