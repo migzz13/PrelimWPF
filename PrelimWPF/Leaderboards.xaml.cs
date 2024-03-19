@@ -48,9 +48,21 @@ namespace PrelimWPF
 					{
 						if (int.Parse(leaderboardData[j][1]) > int.Parse(leaderboardData[i][1]))
 						{
-							var temp = leaderboardData[i];
+							string[] temp = leaderboardData[i];
 							leaderboardData[i] = leaderboardData[j];
 							leaderboardData[j] = temp;
+						}
+						else if (int.Parse(leaderboardData[j][1]) == int.Parse(leaderboardData[i][1]))
+						{
+							int playtimeA, playtimeB;
+
+							if (int.TryParse(leaderboardData[i][2], out playtimeA) && int.TryParse(leaderboardData[j][2], out playtimeB))
+							if (playtimeA < playtimeB)
+							{
+								string[] temp = leaderboardData[i];
+								leaderboardData[i] = leaderboardData[j];
+								leaderboardData[j] = temp;
+							}
 						}
 					}
 				}
