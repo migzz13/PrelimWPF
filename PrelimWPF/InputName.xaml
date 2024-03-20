@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="InputName" Height="413" Width="402">
+        Title="InputName" Height="413" Width="402" WindowStyle="None" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/FlappyBird.png"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="Leaderboards" Height="471" Width="451">
+        Title="Leaderboards" Height="471" Width="451" WindowStyle="None" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/FlappyBird.png"/>
@@ -19,7 +19,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button x:Name="CloseBtn" IsEnabled="True" Content="Close" BorderThickness="3" Margin="0,357,0,25" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" HorizontalAlignment="Center" Width="236" Focusable="False" Click="CloseBtn_Click"/>
+        <Button x:Name="CloseBtn" IsEnabled="True" Content="Close" BorderThickness="3" Margin="0,386,0,25" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" HorizontalAlignment="Center" Width="236" Focusable="False" Click="CloseBtn_Click"/>
 
     </Grid>
 </Window>

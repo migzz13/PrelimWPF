@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="Difficulty" Height="482" Width="376" ResizeMode="NoResize">
+        Title="Difficulty" Height="482" Width="376" ResizeMode="NoResize" WindowStyle="None">
     <Window.Background>
         <ImageBrush Stretch="UniformToFill"/>
     </Window.Background>
