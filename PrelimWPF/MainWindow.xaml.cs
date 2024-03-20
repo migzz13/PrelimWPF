@@ -183,7 +183,7 @@ namespace PrelimWPF
 						Lbl1.Visibility = Visibility.Hidden;
 						break;
 					case "Hard":
-						MaxTime = 3;
+						MaxTime = 30;
 						Lbl128.Visibility = Visibility.Hidden;
 						Lbl64.Visibility = Visibility.Hidden;
 						Lbl32.Visibility = Visibility.Hidden;
