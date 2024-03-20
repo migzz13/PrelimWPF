@@ -217,7 +217,7 @@ namespace PrelimWPF
 		{
 			DifficultModeTimer = new DispatcherTimer();
 			DifficultModeTimer.Tick += HardModeTimer_Tick;
-			DifficultModeTimer.Interval = TimeSpan.FromSeconds(rnd.Next(5, 10));
+			DifficultModeTimer.Interval = TimeSpan.FromSeconds(rnd.Next(7, 12));
 			DifficultModeTimer.Start();
 		}
 		private void HardModeTimer_Tick(object sender, EventArgs e)
@@ -225,8 +225,7 @@ namespace PrelimWPF
 			if (MaxTime == 30)
 			{
 				NumberGenerator();
-				DifficultModeTimer.Interval = TimeSpan.FromSeconds(rnd.Next(5, 10));
-			}
+            }
 		}
 		private void NumberGenerator()
 		{
@@ -402,7 +401,9 @@ namespace PrelimWPF
             int UserAns = bit128 + bit64 + bit32 + bit16 + bit8 + bit4 + bit2 + bit1;
 			if (UserAns == deci)
 			{
-				double reductionpercent = RoundCount * 0.066;
+               
+
+                double reductionpercent = RoundCount * 0.066;
 				int roundtime;
 
 				int reduction = (int)(MaxTime * reductionpercent);
@@ -427,7 +428,13 @@ namespace PrelimWPF
                 deci = rnd.Next(0, 256);
 				decinum.Content = deci;
 
-				Bit1.Content = "0";
+                if (MaxTime == 30)
+                {
+                    DifficultModeTimer.Stop();
+                    StartHardModeTimer();
+                }
+
+                Bit1.Content = "0";
 				Bit2.Content = "0";
 				Bit3.Content = "0";
 				Bit4.Content = "0";
