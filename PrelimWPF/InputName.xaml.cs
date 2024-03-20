@@ -21,9 +21,10 @@ namespace PrelimWPF
 	{
 		public string PlayerName { get; private set; }
 
-		public InputName()
+		public InputName(int score, string totaltimeplayed)
 		{
 			InitializeComponent();
+			Gameovermsg.Content = "Thank you for playing!\n" + "Final Score: " + score + "\nTotal Time Played: " + totaltimeplayed;
 		}
 
 		private void SubmitBtn_Click(object sender, RoutedEventArgs e)

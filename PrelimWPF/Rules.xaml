@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="Rules" Height="634" Width="589" ResizeMode="NoResize" WindowStyle="None">
+        Title="Rules" Height="640" Width="589" ResizeMode="NoResize" WindowStyle="None" BorderThickness="4" BorderBrush="Black">
     <Window.Background>
         <ImageBrush Stretch="UniformToFill"/>
     </Window.Background>
-    <Grid Margin="0,0,0,-6">
+    <Grid Margin="0,3,0,0">
         <Grid.Background>
             <ImageBrush ImageSource="/FlappyBird.png" Stretch="Fill"/>
         </Grid.Background>
@@ -22,8 +22,6 @@
             </Label.Foreground>
         </Label>
         <Button x:Name="CloseBtn" IsEnabled="True" Content="Close" BorderThickness="3" Margin="0,518,0,0" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Top" HorizontalAlignment="Center" Width="236" Focusable="False" Click="CloseBtn_Click"/>
-        <Label x:Name="Background" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" Margin="48,111,43,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="45" BorderBrush="#FF40392F" Height="362" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
-        <Label x:Name="Ruleslbl" Content="Once the game starts, the program will &#xA;generate a random 8-bit decimal number &#xA;and start the timer. Your goal is to &#xA;convert the decimal number into it's &#xA;binary form. The game will continue to &#xA;generate new numbers for you to convert&#xA;until the timer runs out.&#xA;&#xA;Difficulties:&#xA;Easy - 60 seconds for the starting timer.&#xA;&#xA;Medium - 45 second starting timer and bit&#xA;labels are hidden.&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console" Foreground="Black" Width="470" Height="249" Margin="0,121,0,0"/>
-        <Label x:Name="Ruleslbl_Copy" Content="Hard - 30 second starting timer, bit &#xD;&#xA;labels are hidden, and the decimal number&#xA;changes within 5-10 seconds with bit &#xA;values not resetting to 0." HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console" Foreground="Black" Width="470" Height="98" Margin="0,375,0,0"/>
+        <Label x:Name="Background" Content="Once the game starts, the program will &#xA;generate a random 8-bit decimal number &#xA;and start the timer. Your goal is to &#xA;convert the decimal number into it's &#xA;binary form. The game will continue to &#xA;generate new numbers for you to convert&#xA;until the timer runs out.&#xA;&#xA;Difficulties:&#xA;Easy - 60 seconds for the starting timer.&#xA;&#xA;Medium - 45 second starting timer and bit&#xA;labels are hidden.&#xD;&#xA;&#xA;Hard - 30 second starting timer, bit &#xA;labels are hidden, and the decimal number&#xA;changes within 5-10 seconds with bit &#xA;values not resetting to 0." HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" Margin="48,111,43,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="18" BorderBrush="#FF40392F" Height="362" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
     </Grid>
 </Window>

@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="8-Bit Binary Game" Height="760" Width="987" ResizeMode="CanMinimize">
+        Title="Flappy Bit" Height="760" Width="987" ResizeMode="CanMinimize">
     <Grid Margin="0,0,0,-6">
         <Grid.Background>
             <ImageBrush ImageSource="/FlappyBird.png" Stretch="Fill"/>
         </Grid.Background>
         <Button x:Name="EnterBtn" Content="Enter" BorderThickness="3" Margin="0,650,0,0" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" Height="51" VerticalAlignment="Top" HorizontalAlignment="Center" Width="236" Focusable="False" Click="EnterBtn_Click" />
         <Image Margin="389,22,352,430" Source="/8bit Heli.png" Stretch="Fill"/>
-        <Label Content="8-Bit Conversion Game" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" FontSize="65" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
+        <Label Content="Flappy Bit" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" FontSize="65" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0.242"/>

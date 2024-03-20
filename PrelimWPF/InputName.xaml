@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="InputName" Height="413" Width="402" WindowStyle="None" ResizeMode="NoResize">
+        Title="InputName" Height="470" Width="402" ResizeMode="NoResize" WindowStyle="None" BorderThickness="4" BorderBrush="Black">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/FlappyBird.png"/>
         </Grid.Background>
-        <TextBox x:Name="UserName" BorderThickness="3" Margin="110,144,110,186" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" AcceptsReturn="True" SelectionOpacity="-1"/>
-        <Button x:Name="SubmitBtn" IsEnabled="True" Content="Submit" BorderThickness="3" Margin="0,266,0,70" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" HorizontalAlignment="Center" Width="236" Focusable="False" Click="SubmitBtn_Click"/>
-        <Label Content="Enter Name&#xD;&#xA;" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top" FontSize="44" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console" Height="54">
+        <TextBox x:Name="UserName" BorderThickness="3" Margin="56,250,56,160" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE1D897"  FontSize="30" FontFamily="Lucida Console" Foreground="Black" BorderBrush="#FF40392F" AcceptsReturn="True" SelectionOpacity="-1"/>
+        <Button x:Name="SubmitBtn" IsEnabled="True" Content="Submit" BorderThickness="3" Margin="0,366,0,41" Background="#FFFF793B" BorderBrush="White" FontFamily="Lucida Console" FontSize="30" Foreground="White" HorizontalAlignment="Center" Width="236" Focusable="False" Click="SubmitBtn_Click"/>
+        <Label Content="Game Over&#xA;" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" FontSize="44" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console" Height="54">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.242"/>
+                    <GradientStop Color="#FF58DC61" Offset="0.434"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="Gameovermsg" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" BorderThickness="3" Margin="56,80,56,0" VerticalAlignment="Top" Background="#FFE1D897" FontFamily="Lucida Console" FontSize="16" BorderBrush="#FF40392F" Height="74" Foreground="Black" RenderTransformOrigin="-1.971,1.165"/>
+        <Label Content="Enter Name:&#xA;" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Background="{x:Null}" FontFamily="Lucida Console" Height="54" Margin="0,208,0,0">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0.242"/>

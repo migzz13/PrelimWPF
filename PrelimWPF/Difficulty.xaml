@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrelimWPF"
         mc:Ignorable="d"
-        Title="Difficulty" Height="482" Width="376" ResizeMode="NoResize" WindowStyle="None">
+        Title="Difficulty" Height="482" Width="376" ResizeMode="NoResize" WindowStyle="None" BorderThickness="4" BorderBrush="Black">
     <Window.Background>
         <ImageBrush Stretch="UniformToFill"/>
     </Window.Background>
-    <Grid Margin="0,0,0,-6">
+    <Grid Margin="0,2,0,0">
         <Grid.Background>
             <ImageBrush ImageSource="/FlappyBird.png" Stretch="None"/>
         </Grid.Background>

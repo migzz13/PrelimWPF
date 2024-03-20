@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace PrelimWPF
 		Random rnd = new Random();
 
 		private DispatcherTimer DifficultModeTimer;
-
+		public string totaltimeplayed;
 		int deci;
 		int score;
 		int RoundCount = 1;
@@ -77,7 +78,7 @@ namespace PrelimWPF
 			Timer.Content = sec.ToString();
 			if (sec == 0)
 			{
-				string totaltimeplayed = TimePlayedMin.Content.ToString() + ":" + TimePlayedSecs.Content.ToString();
+				totaltimeplayed = TimePlayedMin.Content.ToString() + ":" + TimePlayedSecs.Content.ToString();
 				_GameTimer.Stop();
 				_GameTimerStatus = false;
 				_TimePlayed.Stop();
@@ -87,8 +88,8 @@ namespace PrelimWPF
 				string PlayerName = EnterUserName();
 				SavePlayerScore(PlayerName, score, totaltimeplayed);
 				ShowLeaderboard();
-				
-				Timer.Content = "";
+
+                Timer.Content = "";
 				decinum.Content = "";
 				TimePlayedMin.Content = "";
 				TimePlayedSecs.Content = "";
@@ -121,13 +122,13 @@ namespace PrelimWPF
 				RedBird8.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
 
 				Score.Content = "0";
-			}
+		    }
 		}
 
 		private string EnterUserName()
 		{
 			string playerName = "";
-			InputName inputname = new InputName();
+			InputName inputname = new InputName(score, totaltimeplayed);
 			if (inputname.ShowDialog() == true)
 			{
 				playerName = inputname.PlayerName;
@@ -182,7 +183,7 @@ namespace PrelimWPF
 						Lbl1.Visibility = Visibility.Hidden;
 						break;
 					case "Hard":
-						MaxTime = 30;
+						MaxTime = 3;
 						Lbl128.Visibility = Visibility.Hidden;
 						Lbl64.Visibility = Visibility.Hidden;
 						Lbl32.Visibility = Visibility.Hidden;
@@ -198,6 +199,7 @@ namespace PrelimWPF
 						break;
 				}
 			}
+			Score.Content = "0";
 			Timer.Content = MaxTime.ToString();
 			if (!_GameTimerStatus)
             {
@@ -229,7 +231,7 @@ namespace PrelimWPF
 		}
 		private void NumberGenerator()
 		{
-			deci = rnd.Next(0, 256);
+			deci = rnd.Next(1, 256);
 			decinum.Content = deci;
 		}
         private void RuleBtn_Click(object sender, RoutedEventArgs e)
@@ -464,7 +466,8 @@ namespace PrelimWPF
 			}
 			else
 			{
-				MessageBox.Show("Please try again" , "Incorrect");
+				Wrong wronganswer = new Wrong();
+				wronganswer.Show();
 			}
 		}
 
