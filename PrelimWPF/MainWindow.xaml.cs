@@ -91,14 +91,14 @@ namespace PrelimWPF
 				Timer.Content = "";
 				decinum.Content = "";
 
-				Bit1.Text = "0";
-				Bit2.Text = "0";
-				Bit3.Text = "0";
-				Bit4.Text = "0";
-				Bit5.Text = "0";
-				Bit6.Text = "0";
-				Bit7.Text = "0";
-				Bit8.Text = "0";
+				Bit1.Content = "0";
+				Bit2.Content = "0";
+				Bit3.Content = "0";
+				Bit4.Content = "0";
+				Bit5.Content = "0";
+				Bit6.Content = "0";
+				Bit7.Content = "0";
+				Bit8.Content = "0";
 
 				bit128 = 0;
 				bit64 = 0;
@@ -250,16 +250,16 @@ namespace PrelimWPF
         {
             if (_GameTimerStatus)
             {
-                if (Bit1.Text == "0")
+                if (Bit1.Content.ToString() == "0")
                 {
                     RedBird1.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
-                    Bit1.Text = "1";
+                    Bit1.Content = "1";
                     bit128 = 128;
                 }
                 else
                 {
                     RedBird1.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
-                    Bit1.Text = "0";
+                    Bit1.Content = "0";
                     bit128 = 0;
                 }
             }
@@ -268,16 +268,16 @@ namespace PrelimWPF
         {
             if (_GameTimerStatus)
             {
-                if (Bit2.Text == "0")
+				if (Bit2.Content.ToString() == "0")
                 {
                     RedBird2.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
-                    Bit2.Text = "1";
+                    Bit2.Content = "1";
                     bit64 = 64;
                 }
                 else
                 {
 					RedBird2.Source = new BitmapImage(new Uri("Redbird.png", UriKind.RelativeOrAbsolute));
-					Bit2.Text = "0";
+					Bit2.Content = "0";
                     bit64 = 0;
                 }
             }
@@ -286,16 +286,16 @@ namespace PrelimWPF
         {
 			if (_GameTimerStatus)
 			{
-				if (Bit3.Text == "0")
+				if (Bit3.Content.ToString() == "0")
 				{
 					RedBird3.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
-					Bit3.Text = "1";
+					Bit3.Content = "1";
                     bit32 = 32;
 				}
 				else
 				{
 					RedBird3.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
-					Bit3.Text = "0";
+					Bit3.Content = "0";
                     bit32 = 0;
 				}
 			}
@@ -305,16 +305,16 @@ namespace PrelimWPF
         {
 			if (_GameTimerStatus)
 			{
-				if (Bit4.Text == "0")
+				if (Bit4.Content.ToString() == "0")
 				{
 					RedBird4.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
-					Bit4.Text = "1";
+					Bit4.Content = "1";
                     bit16 = 16;
 				}
 				else
 				{
 					RedBird4.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
-					Bit4.Text = "0";
+					Bit4.Content = "0";
                     bit16 = 0;
 				}
 			}
@@ -324,16 +324,16 @@ namespace PrelimWPF
         {
 			if (_GameTimerStatus)
 			{
-				if (Bit5.Text == "0")
+				if (Bit5.Content.ToString() == "0")
 				{
 					RedBird5.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
-					Bit5.Text = "1";
+					Bit5.Content = "1";
                     bit8 = 8;
 				}
 				else
 				{
 					RedBird5.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
-					Bit5.Text = "0";
+					Bit5.Content = "0";
                     bit8 = 0;
 				}
 			}
@@ -343,16 +343,16 @@ namespace PrelimWPF
         {
 			if (_GameTimerStatus)
 			{
-				if (Bit6.Text == "0")
+				if (Bit6.Content.ToString() == "0")
 				{
 					RedBird6.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
-					Bit6.Text = "1";
+					Bit6.Content = "1";
                     bit4 = 4;
 				}
 				else
 				{
 					RedBird6.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
-					Bit6.Text = "0";
+					Bit6.Content = "0";
                     bit4 = 0;
 				}
 			}
@@ -362,16 +362,16 @@ namespace PrelimWPF
         {
 			if (_GameTimerStatus)
 			{
-				if (Bit7.Text == "0")
+				if (Bit7.Content.ToString() == "0")
 				{
 					RedBird7.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
-					Bit7.Text = "1";
+					Bit7.Content = "1";
                     bit2 = 2;
 				}
 				else
 				{
 					RedBird7.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
-					Bit7.Text = "0";
+					Bit7.Content = "0";
                     bit2 = 0;
 				}
 			}
@@ -381,16 +381,16 @@ namespace PrelimWPF
         {
 			if (_GameTimerStatus)
 			{
-				if (Bit8.Text == "0")
+				if (Bit8.Content.ToString() == "0")
 				{
 					RedBird8.Source = new BitmapImage(new Uri("GreenBird.png", UriKind.RelativeOrAbsolute));
-					Bit8.Text = "1";
+					Bit8.Content = "1";
                     bit1 = 1;
 				}
 				else
 				{
 					RedBird8.Source = new BitmapImage(new Uri("RedBird.png", UriKind.RelativeOrAbsolute));
-					Bit8.Text = "0";
+					Bit8.Content = "0";
                     bit1 = 0;
 				}
 			}
@@ -401,32 +401,41 @@ namespace PrelimWPF
             int UserAns = bit128 + bit64 + bit32 + bit16 + bit8 + bit4 + bit2 + bit1;
 			if (UserAns == deci)
 			{
-				RoundCount++;
 				rounds.Content = RoundCount;
 				double reductionpercent = RoundCount * 0.066;
+				int roundtime;
 
 				int reduction = (int)(MaxTime * reductionpercent);
-
-				
+								
 				if (reductionpercent > 0.66)
 				{
 					reduction = (int)(MaxTime * 0.66);
 				}
 
-				int roundtime = MaxTime - reduction;
-				Timer.Content = roundtime.ToString();
+				if (RoundCount == 1)
+				{
+					roundtime = MaxTime;
+				}
+				else
+				{
+					roundtime = MaxTime - reduction;
+				}
 
-				deci = rnd.Next(0, 256);
+                Timer.Content = roundtime.ToString();
+                RoundCount++;
+                rounds.Content = RoundCount;
+
+                deci = rnd.Next(0, 256);
 				decinum.Content = deci;
 
-				Bit1.Text = "0";
-				Bit2.Text = "0";
-				Bit3.Text = "0";
-				Bit4.Text = "0";
-				Bit5.Text = "0";
-				Bit6.Text = "0";
-				Bit7.Text = "0";
-				Bit8.Text = "0";
+				Bit1.Content = "0";
+				Bit2.Content = "0";
+				Bit3.Content = "0";
+				Bit4.Content = "0";
+				Bit5.Content = "0";
+				Bit6.Content = "0";
+				Bit7.Content = "0";
+				Bit8.Content = "0";
 
 				bit128 = 0;
 				bit64 = 0;
