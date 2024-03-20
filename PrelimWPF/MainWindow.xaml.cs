@@ -209,7 +209,6 @@ namespace PrelimWPF
 				_TimePlayed.Start();
 				_TimePlayedStatus = true;
 			}
-			rounds.Content = RoundCount;
 			NumberGenerator();
 		}
 		private void StartHardModeTimer()
@@ -401,7 +400,6 @@ namespace PrelimWPF
             int UserAns = bit128 + bit64 + bit32 + bit16 + bit8 + bit4 + bit2 + bit1;
 			if (UserAns == deci)
 			{
-				rounds.Content = RoundCount;
 				double reductionpercent = RoundCount * 0.066;
 				int roundtime;
 
@@ -423,7 +421,6 @@ namespace PrelimWPF
 
                 Timer.Content = roundtime.ToString();
                 RoundCount++;
-                rounds.Content = RoundCount;
 
                 deci = rnd.Next(0, 256);
 				decinum.Content = deci;
