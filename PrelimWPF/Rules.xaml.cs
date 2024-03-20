@@ -26,7 +26,11 @@ namespace PrelimWPF
 
 		private void CloseBtn_Click(object sender, RoutedEventArgs e)
 		{
-			this.Close();
+			if (MainWindow.rulesopen)
+			{
+				MainWindow.rulesopen = false;
+				this.Close();
+			}
 		}
 	}
 }

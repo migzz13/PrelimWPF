@@ -27,7 +27,13 @@ namespace PrelimWPF
 
 		private DispatcherTimer DifficultModeTimer;
 		public string totaltimeplayed;
-		int deci;
+
+        public static bool lbopen = false;
+        public static bool rulesopen = false;
+        public static bool diffopen = false;
+        public static bool inputnameopen = false;
+
+        int deci;
 		int score;
 		int RoundCount = 1;
 		public int MaxTime = 60;
@@ -147,8 +153,12 @@ namespace PrelimWPF
 
 		private void ShowLeaderboard()
 		{
-			Leaderboards leaderboards = new Leaderboards();
-			leaderboards.Show();
+			if (!lbopen)
+			{
+				Leaderboards leaderboards = new Leaderboards();
+				lbopen = true;
+				leaderboards.Show();
+			}
 		}
 
 		private void StartBtn_Click(object sender, RoutedEventArgs e)
@@ -237,15 +247,21 @@ namespace PrelimWPF
         private void RuleBtn_Click(object sender, RoutedEventArgs e)
         {
 			Rules ruleswindow = new Rules();
-			if (_GameTimerStatus)
+			if (!rulesopen)
 			{
-				_GameTimer.Stop();
-				ruleswindow.Show();
-				_GameTimer.Start();
-			}
-			else
-			{
-				ruleswindow.Show();
+				ruleswindow.Focus();
+				if (_GameTimerStatus)
+				{
+					_GameTimer.Stop();
+					rulesopen = true;
+					ruleswindow.Show();
+					_GameTimer.Start();
+				}
+				else
+				{
+					rulesopen = true;
+					ruleswindow.Show();
+				}
 			}
 		}
         private void Switch1_Click(object sender, RoutedEventArgs e)
