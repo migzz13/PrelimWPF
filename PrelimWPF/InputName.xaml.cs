@@ -29,8 +29,12 @@ namespace PrelimWPF
 
 		private void SubmitBtn_Click(object sender, RoutedEventArgs e)
 		{
-			PlayerName = UserName.Text;
-			DialogResult = true;
+			if (MainWindow.inputnameopen)
+			{
+				PlayerName = UserName.Text;
+				MainWindow.inputnameopen = false;
+				DialogResult = true;
+			}
 		}
 	}
 }

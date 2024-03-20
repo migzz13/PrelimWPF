@@ -28,13 +28,17 @@ namespace PrelimWPF
 
 		private void SelectBtn_Click(object sender, RoutedEventArgs e)
 		{
-			if (EasyDiff.IsChecked == true)
-				SelectedDifficulty = "Easy";
-			else if (MediumDiff.IsChecked == true)
-				SelectedDifficulty = "Medium";
-			else if (HardDiff.IsChecked == true)
-				SelectedDifficulty = "Hard";
-			DialogResult = true;
+			if (MainWindow.diffopen)
+			{
+				if (EasyDiff.IsChecked == true)
+					SelectedDifficulty = "Easy";
+				else if (MediumDiff.IsChecked == true)
+					SelectedDifficulty = "Medium";
+				else if (HardDiff.IsChecked == true)
+					SelectedDifficulty = "Hard";
+				MainWindow.diffopen = false;
+				DialogResult = true;
+			}
 		}
 
 		private void EasyDiff_Checked(object sender, RoutedEventArgs e)

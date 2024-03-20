@@ -134,15 +134,19 @@ namespace PrelimWPF
 		private string EnterUserName()
 		{
 			string playerName = "";
-			InputName inputname = new InputName(score, totaltimeplayed);
-			if (inputname.ShowDialog() == true)
+			if (!inputnameopen)
 			{
-				playerName = inputname.PlayerName;
+				InputName inputname = new InputName(score, totaltimeplayed);
+				inputnameopen = true;
+				if (inputname.ShowDialog() == true)
+				{
+					playerName = inputname.PlayerName;
+				}
 			}
 			return playerName;
-		}
+        }
 
-		private void SavePlayerScore(string playerName, int playerScore, string playTime)
+        private void SavePlayerScore(string playerName, int playerScore, string playTime)
 		{
 			string filePath = "leaderboard.csv";
 			using (StreamWriter writer = new StreamWriter(filePath, true))
@@ -163,50 +167,54 @@ namespace PrelimWPF
 
 		private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-			Difficulty difficultywindow = new Difficulty();
-			if (difficultywindow.ShowDialog() == true)
+			if (!diffopen)
 			{
-				string selectedDifficulty = difficultywindow.SelectedDifficulty;
-
-				switch (selectedDifficulty)
+				Difficulty difficultywindow = new Difficulty();
+				diffopen = true;
+				if (difficultywindow.ShowDialog() == true)
 				{
-					case "Easy":
-						MaxTime = 60;
-						Lbl128.Visibility = Visibility.Visible;
-						Lbl64.Visibility = Visibility.Visible;
-						Lbl32.Visibility = Visibility.Visible;
-						Lbl16.Visibility = Visibility.Visible;
-						Lbl8.Visibility = Visibility.Visible;
-						Lbl4.Visibility = Visibility.Visible;
-						Lbl2.Visibility = Visibility.Visible;
-						Lbl1.Visibility = Visibility.Visible;
-						break;
-					case "Medium":
-						MaxTime = 45;
-						Lbl128.Visibility = Visibility.Hidden;
-						Lbl64.Visibility = Visibility.Hidden;
-						Lbl32.Visibility = Visibility.Hidden;
-						Lbl16.Visibility = Visibility.Hidden;
-						Lbl8.Visibility = Visibility.Hidden;
-						Lbl4.Visibility = Visibility.Hidden;
-						Lbl2.Visibility = Visibility.Hidden;
-						Lbl1.Visibility = Visibility.Hidden;
-						break;
-					case "Hard":
-						MaxTime = 30;
-						Lbl128.Visibility = Visibility.Hidden;
-						Lbl64.Visibility = Visibility.Hidden;
-						Lbl32.Visibility = Visibility.Hidden;
-						Lbl16.Visibility = Visibility.Hidden;
-						Lbl8.Visibility = Visibility.Hidden;
-						Lbl4.Visibility = Visibility.Hidden;
-						Lbl2.Visibility = Visibility.Hidden;
-						Lbl1.Visibility = Visibility.Hidden;
-						StartHardModeTimer();
-						break;
-					default:
-						MaxTime = 60;
-						break;
+					string selectedDifficulty = difficultywindow.SelectedDifficulty;
+
+					switch (selectedDifficulty)
+					{
+						case "Easy":
+							MaxTime = 60;
+							Lbl128.Visibility = Visibility.Visible;
+							Lbl64.Visibility = Visibility.Visible;
+							Lbl32.Visibility = Visibility.Visible;
+							Lbl16.Visibility = Visibility.Visible;
+							Lbl8.Visibility = Visibility.Visible;
+							Lbl4.Visibility = Visibility.Visible;
+							Lbl2.Visibility = Visibility.Visible;
+							Lbl1.Visibility = Visibility.Visible;
+							break;
+						case "Medium":
+							MaxTime = 45;
+							Lbl128.Visibility = Visibility.Hidden;
+							Lbl64.Visibility = Visibility.Hidden;
+							Lbl32.Visibility = Visibility.Hidden;
+							Lbl16.Visibility = Visibility.Hidden;
+							Lbl8.Visibility = Visibility.Hidden;
+							Lbl4.Visibility = Visibility.Hidden;
+							Lbl2.Visibility = Visibility.Hidden;
+							Lbl1.Visibility = Visibility.Hidden;
+							break;
+						case "Hard":
+							MaxTime = 30;
+							Lbl128.Visibility = Visibility.Hidden;
+							Lbl64.Visibility = Visibility.Hidden;
+							Lbl32.Visibility = Visibility.Hidden;
+							Lbl16.Visibility = Visibility.Hidden;
+							Lbl8.Visibility = Visibility.Hidden;
+							Lbl4.Visibility = Visibility.Hidden;
+							Lbl2.Visibility = Visibility.Hidden;
+							Lbl1.Visibility = Visibility.Hidden;
+							StartHardModeTimer();
+							break;
+						default:
+							MaxTime = 60;
+							break;
+					}
 				}
 			}
 			Score.Content = "0";
@@ -249,19 +257,18 @@ namespace PrelimWPF
 			Rules ruleswindow = new Rules();
 			if (!rulesopen)
 			{
-				ruleswindow.Focus();
 				if (_GameTimerStatus)
 				{
 					_GameTimer.Stop();
 					rulesopen = true;
 					ruleswindow.Show();
-					_GameTimer.Start();
+                    _GameTimer.Start();
 				}
 				else
 				{
 					rulesopen = true;
 					ruleswindow.Show();
-				}
+                }
 			}
 		}
         private void Switch1_Click(object sender, RoutedEventArgs e)
