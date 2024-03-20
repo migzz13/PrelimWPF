@@ -401,18 +401,16 @@ namespace PrelimWPF
             int UserAns = bit128 + bit64 + bit32 + bit16 + bit8 + bit4 + bit2 + bit1;
 			if (UserAns == deci)
 			{
-               
-
                 double reductionpercent = RoundCount * 0.066;
 				int roundtime;
 
 				int reduction = (int)(MaxTime * reductionpercent);
 								
-				if (reductionpercent > 0.66)
+				if (RoundCount == 11)
 				{
 					reduction = (int)(MaxTime * 0.66);
 				}
-
+			
 				if (RoundCount == 1)
 				{
 					roundtime = MaxTime;
