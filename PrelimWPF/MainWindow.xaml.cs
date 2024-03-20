@@ -90,6 +90,8 @@ namespace PrelimWPF
 				
 				Timer.Content = "";
 				decinum.Content = "";
+				TimePlayedMin.Content = "";
+				TimePlayedSecs.Content = "";
 
 				Bit1.Content = "0";
 				Bit2.Content = "0";
